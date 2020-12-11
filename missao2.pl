@@ -477,7 +477,7 @@ versao(rust, 1.46, 2020, 08).
 versao(rust, 1.47, 2020, 10).
 versao(rust, 1.48, 2020, 11).
 
-primeiraVersao(rust, 0.1).
+primeiraVersao(rust, 0.01).
 versaoMaisRecente(rust, 1.48).
 
 descendente(X, Y) :- baseadaEm(X, Y).
@@ -513,7 +513,7 @@ hiatoReverso(LP, Versao, Hiato) :-
     Hiato is (AnoSeguinte - Ano)*12 + MesSeguinte - Mes.
 
 maiorHiato(LP, HE, VE, MaiorHiato) :-
-    hiato(LP, VE, Hiato),
+    hiatoReverso(LP, VE, Hiato),
     (Hiato > HE -> HS is Hiato; HS is HE),
     versaoSeguinte(VS, VE, LP),
     versaoMaisRecente(LP, Versao),
